@@ -30,6 +30,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2089B5C41C5EC56C003B18B8 /* LoginPage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = LoginPage;
+			sourceTree = "<group>";
+		};
+		2089B5C51C5EC576003B18B8 /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = HomePage;
+			sourceTree = "<group>";
+		};
+		2089B5C61C5EC57F003B18B8 /* PlaylistManagementPage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = PlaylistManagementPage;
+			sourceTree = "<group>";
+		};
+		2089B5C71C5EC591003B18B8 /* PlaylistViewPage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = PlaylistViewPage;
+			sourceTree = "<group>";
+		};
+		2089B5C81C5EC5DA003B18B8 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Foundation;
+			sourceTree = "<group>";
+		};
+		2089B5C91C5EC5E5003B18B8 /* AppPages */ = {
+			isa = PBXGroup;
+			children = (
+				2089B5C41C5EC56C003B18B8 /* LoginPage */,
+				2089B5C51C5EC576003B18B8 /* HomePage */,
+				2089B5C61C5EC57F003B18B8 /* PlaylistManagementPage */,
+				2089B5C71C5EC591003B18B8 /* PlaylistViewPage */,
+			);
+			name = AppPages;
+			sourceTree = "<group>";
+		};
 		3FB297971C5EC328009821EA = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +97,8 @@
 			children = (
 				3FB297A61C5EC328009821EA /* AppDelegate.h */,
 				3FB297A71C5EC328009821EA /* AppDelegate.m */,
+				2089B5C91C5EC5E5003B18B8 /* AppPages */,
+				2089B5C81C5EC5DA003B18B8 /* Foundation */,
 				3FB297B41C5EC329009821EA /* Info.plist */,
 				3FB297A31C5EC328009821EA /* Supporting Files */,
 			);
@@ -261,6 +309,7 @@
 				3FB297B91C5EC329009821EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
