@@ -11,6 +11,7 @@
 @interface LoginPageViewController ()
 
 @property (nonatomic) UIAlertController *failAlert;
+@property (nonatomic) LoginModel *loginModel;
 
 - (IBAction)loginButtonPressed:(id)sender;
 
@@ -22,6 +23,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.loginModel = [[LoginModel alloc] init];
+    [self.loginModel setDelegate:self];
     
     self.failAlert = [UIAlertController alertControllerWithTitle:@"N00B!" message:@"You couldn't login because you're probably a dumb noob." preferredStyle:UIAlertControllerStyleAlert];
     
