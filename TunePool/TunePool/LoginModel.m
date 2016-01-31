@@ -8,7 +8,18 @@
 
 #import "LoginModel.h"
 
+@interface LoginModel ()
+
+@property (weak, nonatomic) id <LoginModelDelegate> delegate;
+
+@end
+
 @implementation LoginModel
+
+- (void)setDelegate:(id<LoginModelDelegate>)delegate
+{
+    self.delegate = delegate;
+}
 
 - (BOOL) doLogin {
     [[SPTAuth defaultInstance] setClientID:@"bd1f8ce3ea8146b2abe64fa1e134adbf"];

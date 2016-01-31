@@ -23,6 +23,7 @@
 		2089B5F01C5EC72F003B18B8 /* SongPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2089B5EF1C5EC72F003B18B8 /* SongPool.m */; };
 		2089B5F31C5EC73C003B18B8 /* FriendsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 2089B5F21C5EC73C003B18B8 /* FriendsList.m */; };
 		2089B5F61C5EC748003B18B8 /* MusicalTaste.m in Sources */ = {isa = PBXBuildFile; fileRef = 2089B5F51C5EC748003B18B8 /* MusicalTaste.m */; };
+		2089B5FA1C5ECA40003B18B8 /* SpookyGhost.png in Resources */ = {isa = PBXBuildFile; fileRef = 2089B5F91C5ECA40003B18B8 /* SpookyGhost.png */; };
 		3FB297A51C5EC328009821EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB297A41C5EC328009821EA /* main.m */; };
 		3FB297A81C5EC328009821EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB297A71C5EC328009821EA /* AppDelegate.m */; };
 		3FB297BC1C5EC8A6009821EA /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB297BB1C5EC8A6009821EA /* Spotify.framework */; };
@@ -60,6 +61,7 @@
 		2089B5F21C5EC73C003B18B8 /* FriendsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsList.m; sourceTree = "<group>"; };
 		2089B5F41C5EC748003B18B8 /* MusicalTaste.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicalTaste.h; sourceTree = "<group>"; };
 		2089B5F51C5EC748003B18B8 /* MusicalTaste.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicalTaste.m; sourceTree = "<group>"; };
+		2089B5F91C5ECA40003B18B8 /* SpookyGhost.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SpookyGhost.png; path = Images/SpookyGhost.png; sourceTree = "<group>"; };
 		3FB297A01C5EC328009821EA /* TunePool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TunePool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FB297A41C5EC328009821EA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3FB297A61C5EC328009821EA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -162,6 +164,22 @@
 			name = AppPages;
 			sourceTree = "<group>";
 		};
+		2089B5F71C5EC9CD003B18B8 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2089B5F91C5ECA40003B18B8 /* SpookyGhost.png */,
+				2089B5F81C5EC9DB003B18B8 /* Backgrounds */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		2089B5F81C5EC9DB003B18B8 /* Backgrounds */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Backgrounds;
+			sourceTree = "<group>";
+		};
 		3FB297971C5EC328009821EA = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +213,7 @@
 		3FB297A31C5EC328009821EA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2089B5F71C5EC9CD003B18B8 /* Images */,
 				3FB297A41C5EC328009821EA /* main.m */,
 			);
 			name = "Supporting Files";
@@ -268,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2089B5DD1C5EC6C4003B18B8 /* PlaylistViewPageViewController.xib in Resources */,
+				2089B5FA1C5ECA40003B18B8 /* SpookyGhost.png in Resources */,
 				2089B5D81C5EC6AC003B18B8 /* PlaylistManagementPageViewController.xib in Resources */,
 				2089B5D31C5EC696003B18B8 /* HomePageViewController.xib in Resources */,
 				2089B5CE1C5EC689003B18B8 /* LoginPageViewController.xib in Resources */,
