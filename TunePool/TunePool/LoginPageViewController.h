@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginPageViewController : UIViewController
+#import "LoginModel.h"
+
+@interface LoginPageViewController : UIViewController <LoginModelDelegate>
 
 @end

@@ -44,6 +44,18 @@
     [self presentViewController:self.failAlert animated:true completion:nil];
 }
 
+#pragma mark - LoginModel Delegate Methods
+
+- (void)loginModelSuccess
+{
+    NSLog(@"LoginModel says WOOP WOOP swag!");
+}
+
+- (void)loginModelFailure
+{
+    NSLog(@"LoginModel says fuk");
+}
+
 /*
 #pragma mark - Navigation
 

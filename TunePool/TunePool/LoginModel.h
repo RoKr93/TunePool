@@ -9,9 +9,19 @@
 #import <Spotify/Spotify.h>
 #import <Foundation/Foundation.h>
 
+@protocol LoginModelDelegate
+@required
+
+- (void)loginModelSuccess;
+- (void)loginModelFailure;
+
+@end
+
 @interface LoginModel : NSObject
 
 @property (nonatomic, strong) SPTSession *session;
+
+- (void)setDelegate:(id <LoginModelDelegate>)delegate;
 
 - (BOOL) doLogin;
 - (BOOL) application:(UIApplication *)application
