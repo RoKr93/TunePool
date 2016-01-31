@@ -28,6 +28,7 @@
 		3FB297BC1C5EC8A6009821EA /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB297BB1C5EC8A6009821EA /* Spotify.framework */; };
 		3FB297BE1C5EC95A009821EA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB297BD1C5EC95A009821EA /* AVFoundation.framework */; };
 		3FB297C01C5EC968009821EA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB297BF1C5EC968009821EA /* SystemConfiguration.framework */; };
+		3FB297C31C5ECA65009821EA /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB297C21C5ECA65009821EA /* LoginModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,8 @@
 		3FB297BB1C5EC8A6009821EA /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
 		3FB297BD1C5EC95A009821EA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		3FB297BF1C5EC968009821EA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3FB297C11C5ECA65009821EA /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
+		3FB297C21C5ECA65009821EA /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				2089B5CA1C5EC689003B18B8 /* LoginPageViewController.h */,
 				2089B5CB1C5EC689003B18B8 /* LoginPageViewController.m */,
 				2089B5CC1C5EC689003B18B8 /* LoginPageViewController.xib */,
+				3FB297C11C5ECA65009821EA /* LoginModel.h */,
+				3FB297C21C5ECA65009821EA /* LoginModel.m */,
 			);
 			name = LoginPage;
 			sourceTree = "<group>";
@@ -290,6 +295,7 @@
 				2089B5E61C5EC6FB003B18B8 /* Artist.m in Sources */,
 				2089B5F31C5EC73C003B18B8 /* FriendsList.m in Sources */,
 				2089B5CD1C5EC689003B18B8 /* LoginPageViewController.m in Sources */,
+				3FB297C31C5ECA65009821EA /* LoginModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
