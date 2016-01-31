@@ -25,6 +25,9 @@
 		2089B5F61C5EC748003B18B8 /* MusicalTaste.m in Sources */ = {isa = PBXBuildFile; fileRef = 2089B5F51C5EC748003B18B8 /* MusicalTaste.m */; };
 		3FB297A51C5EC328009821EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB297A41C5EC328009821EA /* main.m */; };
 		3FB297A81C5EC328009821EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB297A71C5EC328009821EA /* AppDelegate.m */; };
+		3FB297BC1C5EC8A6009821EA /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB297BB1C5EC8A6009821EA /* Spotify.framework */; };
+		3FB297BE1C5EC95A009821EA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB297BD1C5EC95A009821EA /* AVFoundation.framework */; };
+		3FB297C01C5EC968009821EA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FB297BF1C5EC968009821EA /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +64,9 @@
 		3FB297A61C5EC328009821EA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3FB297A71C5EC328009821EA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3FB297B41C5EC329009821EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FB297BB1C5EC8A6009821EA /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
+		3FB297BD1C5EC95A009821EA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3FB297BF1C5EC968009821EA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +74,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FB297C01C5EC968009821EA /* SystemConfiguration.framework in Frameworks */,
+				3FB297BE1C5EC95A009821EA /* AVFoundation.framework in Frameworks */,
+				3FB297BC1C5EC8A6009821EA /* Spotify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +160,8 @@
 		3FB297971C5EC328009821EA = {
 			isa = PBXGroup;
 			children = (
+				3FB297BF1C5EC968009821EA /* SystemConfiguration.framework */,
+				3FB297BD1C5EC95A009821EA /* AVFoundation.framework */,
 				3FB297A21C5EC328009821EA /* TunePool */,
 				3FB297A11C5EC328009821EA /* Products */,
 			);
@@ -172,6 +183,7 @@
 				2089B5C91C5EC5E5003B18B8 /* AppPages */,
 				2089B5C81C5EC5DA003B18B8 /* Foundation */,
 				3FB297B41C5EC329009821EA /* Info.plist */,
+				3FB297BA1C5EC86C009821EA /* Frameworks */,
 				3FB297A31C5EC328009821EA /* Supporting Files */,
 			);
 			path = TunePool;
@@ -183,6 +195,14 @@
 				3FB297A41C5EC328009821EA /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3FB297BA1C5EC86C009821EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FB297BB1C5EC8A6009821EA /* Spotify.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,8 +380,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TunePool",
+				);
 				INFOPLIST_FILE = TunePool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.RoshanKrishnan.TunePool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -371,8 +396,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TunePool",
+				);
 				INFOPLIST_FILE = TunePool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.RoshanKrishnan.TunePool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
