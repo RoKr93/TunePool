@@ -165,8 +165,6 @@
 		3FB297971C5EC328009821EA = {
 			isa = PBXGroup;
 			children = (
-				3FB297BF1C5EC968009821EA /* SystemConfiguration.framework */,
-				3FB297BD1C5EC95A009821EA /* AVFoundation.framework */,
 				3FB297A21C5EC328009821EA /* TunePool */,
 				3FB297A11C5EC328009821EA /* Products */,
 			);
@@ -205,6 +203,8 @@
 		3FB297BA1C5EC86C009821EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3FB297BF1C5EC968009821EA /* SystemConfiguration.framework */,
+				3FB297BD1C5EC95A009821EA /* AVFoundation.framework */,
 				3FB297BB1C5EC8A6009821EA /* Spotify.framework */,
 			);
 			name = Frameworks;
