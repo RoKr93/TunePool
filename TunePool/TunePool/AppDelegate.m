@@ -10,14 +10,31 @@
 
 @interface AppDelegate ()
 
+@property (strong, nonatomic) UIViewController *loginPageVC;
+
+- (void)prepare;
+
 @end
 
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
     // Override point for customization after application launch.
+    [self prepare];
     return YES;
+}
+
+- (void)prepare
+{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    self.loginPageVC = [[LoginPageViewController alloc] init];
+    [self.window setRootViewController:self.loginPageVC];
+    
+    [self.window makeKeyAndVisible];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -10,18 +10,38 @@
 
 @interface LoginPageViewController ()
 
+@property (nonatomic) UIAlertController *failAlert;
+
+- (IBAction)loginButtonPressed:(id)sender;
+
 @end
 
 @implementation LoginPageViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.failAlert = [UIAlertController alertControllerWithTitle:@"N00B!" message:@"You couldn't login because you're probably a dumb noob." preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Sorry, dad..." style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+        NSLog(@"FUCK YOU DAD! NO RULES! 2016!");
+    }];
+    
+    [self.failAlert addAction:defaultAction];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)loginButtonPressed:(id)sender
+{
+    //something something Spotify SDK
+    [self presentViewController:self.failAlert animated:true completion:nil];
 }
 
 /*
