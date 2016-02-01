@@ -10,6 +10,8 @@
 
 @interface LoginPageViewController ()
 
+@property (nonatomic) id appDelegate;
+
 @property (nonatomic) UIAlertController *failAlert;
 @property (nonatomic) LoginModel *loginModel;
 
@@ -50,9 +52,14 @@
 
 #pragma mark - LoginModel Delegate Methods
 
-- (void)loginModelSuccess
+- (void)loginModelSuccessWithUser:(User *)user andSpotifySession:(SPTSession *)session
 {
     NSLog(@"LoginModel says WOOP WOOP swag!");
+    
+    if([(NSObject*)self.appDelegate respondsToSelector:@selector(loginPageFinishedWithUser:andSpotifySession:)])
+    {
+        [self.appDelegate loginPageFinishedWithUser:user andSpotifySession:session];
+    }
 }
 
 - (void)loginModelFailure

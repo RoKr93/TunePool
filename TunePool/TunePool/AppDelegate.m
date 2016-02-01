@@ -11,6 +11,9 @@
 @interface AppDelegate ()
 
 @property (strong, nonatomic) UIViewController *loginPageVC;
+@property (strong, nonatomic) UIViewController *homePageVC;
+
+@property (strong, nonatomic) User *user;
 @property (strong, nonatomic) SPTSession *spotifySession;
 
 - (void)prepare;
@@ -58,6 +61,17 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Navigation Delegates
+
+- (void)loginPageFinishedWithUser:(User *)user andSpotifySession:(SPTSession *)session
+{
+    self.user = user;
+    self.spotifySession = session;
+    
+    self.homePageVC = [[HomePageViewController alloc] initWithUser:self.user andSpotifySession:self.spotifySession];
+    [self.window setRootViewController:self.homePageVC];
 }
 
 @end
