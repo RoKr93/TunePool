@@ -10,4 +10,6 @@
 
 @interface Song : NSObject
 
++ (Song*)createSongWithResponse:(NSDictionary *)res;
+
 @end

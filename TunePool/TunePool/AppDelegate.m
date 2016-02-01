@@ -11,6 +11,7 @@
 @interface AppDelegate ()
 
 @property (strong, nonatomic) UIViewController *loginPageVC;
+@property (strong, nonatomic) SPTSession *spotifySession;
 
 - (void)prepare;
 

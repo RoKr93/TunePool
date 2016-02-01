@@ -10,6 +10,15 @@
 
 #import "LoginModel.h"
 
+@protocol LoginPageDelegate <NSObject>
+@required
+
+- (void)loginPageFinished:
+
+@end
+
 @interface LoginPageViewController : UIViewController <LoginModelDelegate>
+
+
 
 @end
