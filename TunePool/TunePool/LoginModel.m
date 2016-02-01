@@ -48,12 +48,21 @@
             
             if (error != nil) {
                 NSLog(@"*** Auth error: %@", error);
+                if([(NSObject *)self.delegate respondsToSelector:@selector(loginModelFailure)]){
+                    [self.delegate loginModelFailure];
+                }
                 return;
             }
         }];
+        if([(NSObject *)self.delegate respondsToSelector:@selector(loginModelSuccess)]){
+            [self.delegate loginModelSuccess];
+        }
         return YES;
     }
     
+    if([(NSObject *)self.delegate respondsToSelector:@selector(loginModelFailure)]){
+        [self.delegate loginModelFailure];
+    }
     return NO;
 }
 
