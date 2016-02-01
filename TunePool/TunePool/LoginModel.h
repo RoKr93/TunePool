@@ -20,6 +20,7 @@
 @interface LoginModel : NSObject
 
 @property (nonatomic, strong) SPTSession *session;
+@property (nonatomic, strong) NSMutableArray *scopes;
 
 - (void)setDelegate:(id <LoginModelDelegate>)delegate;
 
@@ -28,5 +29,6 @@
              openURL:(NSURL *)url
    sourceApplication:(NSString *)sourceApplication
           annotation:(id)annotation;
+- (NSDictionary *) getUserInformation;
 
 @end

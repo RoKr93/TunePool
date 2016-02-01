@@ -16,6 +16,17 @@
 
 @implementation LoginModel
 
+- (id) init {
+    self = [super init];
+    if(self){
+        // we want to be able to stream and access user information
+        self.scopes = [[NSMutableArray alloc] init];
+        [self.scopes addObject:SPTAuthStreamingScope];
+        [self.scopes addObject:SPTAuthUserReadPrivateScope];
+    }
+    return self;
+}
+
 - (void)setDelegate:(id<LoginModelDelegate>)delegate
 {
     self.delegate = delegate;
@@ -24,7 +35,7 @@
 - (BOOL) doLogin {
     [[SPTAuth defaultInstance] setClientID:@"bd1f8ce3ea8146b2abe64fa1e134adbf"];
     [[SPTAuth defaultInstance] setRedirectURL:[NSURL URLWithString:@"tunepool://returnafterlogin"]];
-    [[SPTAuth defaultInstance] setRequestedScopes:@[SPTAuthStreamingScope]];
+    [[SPTAuth defaultInstance] setRequestedScopes:self.scopes];
     
     // Construct a login URL and open it
     NSURL *loginURL = [[SPTAuth defaultInstance] loginURL];
@@ -46,24 +57,37 @@
     if ([[SPTAuth defaultInstance] canHandleURL:url]) {
         [[SPTAuth defaultInstance] handleAuthCallbackWithTriggeredAuthURL:url callback:^(NSError *error, SPTSession *session) {
             
+            // check for error
             if (error != nil) {
                 NSLog(@"*** Auth error: %@", error);
+                // notify the viewcontroller that we failed
                 if([(NSObject *)self.delegate respondsToSelector:@selector(loginModelFailure)]){
                     [self.delegate loginModelFailure];
                 }
                 return;
             }
+            
+            // store the session in our property
+            self.session = session;
         }];
+        
+        // we succeeded, aw yuhhh
         if([(NSObject *)self.delegate respondsToSelector:@selector(loginModelSuccess)]){
             [self.delegate loginModelSuccess];
         }
         return YES;
     }
     
+    // can't handle the URL, so we failed
     if([(NSObject *)self.delegate respondsToSelector:@selector(loginModelFailure)]){
         [self.delegate loginModelFailure];
     }
     return NO;
+}
+
+- (NSDictionary *) getUserInformation {
+    NSDictionary *userInfo = [[NSDictionary alloc] init];
+    return userInfo;
 }
 
 @end
