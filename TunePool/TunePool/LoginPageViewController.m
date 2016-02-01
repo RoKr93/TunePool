@@ -47,7 +47,8 @@
 - (IBAction)loginButtonPressed:(id)sender
 {
     //something something Spotify SDK
-    [self presentViewController:self.failAlert animated:true completion:nil];
+    if(![self.loginModel doLogin])
+        [self presentViewController:self.failAlert animated:true completion:nil];
 }
 
 #pragma mark - LoginModel Delegate Methods
