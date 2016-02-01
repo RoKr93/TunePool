@@ -16,9 +16,11 @@
 
 @implementation LoginModel
 
-- (id) init {
+- (id) init
+{
     self = [super init];
-    if(self){
+    if(self)
+    {
         // we want to be able to stream and access user information
         self.scopes = [[NSMutableArray alloc] init];
         [self.scopes addObject:SPTAuthStreamingScope];
@@ -27,12 +29,13 @@
     return self;
 }
 
-- (void)setDelegate:(id<LoginModelDelegate>)delegate
-{
-    self.delegate = delegate;
-}
+//- (void)setDelegate:(id<LoginModelDelegate>)delegate
+//{
+//    self.delegate = delegate;
+//}
 
-- (BOOL) doLogin {
+- (BOOL) doLogin
+{
     [[SPTAuth defaultInstance] setClientID:@"bd1f8ce3ea8146b2abe64fa1e134adbf"];
     [[SPTAuth defaultInstance] setRedirectURL:[NSURL URLWithString:@"tunepool://returnafterlogin"]];
     [[SPTAuth defaultInstance] setRequestedScopes:self.scopes];
@@ -54,14 +57,17 @@
           annotation:(id)annotation {
     
     // Ask SPTAuth if the URL given is a Spotify authentication callback
-    if ([[SPTAuth defaultInstance] canHandleURL:url]) {
+    if ([[SPTAuth defaultInstance] canHandleURL:url])
+    {
         [[SPTAuth defaultInstance] handleAuthCallbackWithTriggeredAuthURL:url callback:^(NSError *error, SPTSession *session) {
             
             // check for error
-            if (error != nil) {
+            if (error != nil)
+            {
                 NSLog(@"*** Auth error: %@", error);
                 // notify the viewcontroller that we failed
-                if([(NSObject *)self.delegate respondsToSelector:@selector(loginModelFailure)]){
+                if([(NSObject *)self.delegate respondsToSelector:@selector(loginModelFailure)])
+                {
                     [self.delegate loginModelFailure];
                 }
                 return;
@@ -72,28 +78,34 @@
         }];
         
         // we succeeded, aw yuhhh
-        if([(NSObject *)self.delegate respondsToSelector:@selector(loginModelSuccessWithUser:andSpotifySession:)]){
+        if([(NSObject *)self.delegate respondsToSelector:@selector(loginModelSuccessWithUser:andSpotifySession:)])
+        {
             [self.delegate loginModelSuccessWithUser:[self getUserInformation] andSpotifySession:self.session];
         }
         return YES;
     }
     
     // can't handle the URL, so we failed
-    if([(NSObject *)self.delegate respondsToSelector:@selector(loginModelFailure)]){
+    if([(NSObject *)self.delegate respondsToSelector:@selector(loginModelFailure)])
+    {
         [self.delegate loginModelFailure];
     }
     return NO;
 }
 
-- (User *) getUserInformation {
+- (User *) getUserInformation
+{
     __block User *myUser = nil;
     
-    [SPTUser requestCurrentUserWithAccessToken:self.session.accessToken callback:^(NSError *error, SPTUser *user){
+    [SPTUser requestCurrentUserWithAccessToken:self.session.accessToken callback:^(NSError *error, SPTUser *user)
+    {
         // check for error
-        if (error != nil) {
+        if (error != nil)
+        {
             NSLog(@"*** Auth error: %@", error);
             // notify the viewcontroller that we failed
-            if([(NSObject *)self.delegate respondsToSelector:@selector(loginModelFailure)]){
+            if([(NSObject *)self.delegate respondsToSelector:@selector(loginModelFailure)])
+            {
                 [self.delegate loginModelFailure];
             }
             return;
