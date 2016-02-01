@@ -10,4 +10,6 @@
 
 @interface Artist : NSObject
 
++ (Artist*)createArtistWithResponse:(NSDictionary *)res;
+
 @end

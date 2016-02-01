@@ -9,10 +9,12 @@
 #import <Spotify/Spotify.h>
 #import <Foundation/Foundation.h>
 
-@protocol LoginModelDelegate
+#import "User.h"
+
+@protocol LoginModelDelegate <NSObject>
 @required
 
-- (void)loginModelSuccess;
+- (void)loginModelSuccessWithUser:(User *)user andSpotifySession:(SPTSession *)session;
 - (void)loginModelFailure;
 
 @end
