@@ -9,13 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "LoginModel.h"
-
-@protocol LoginPageDelegate <NSObject>
-@required
-
-- (void)loginPageFinished:
-
-@end
+#import "NavigationProtocol.h"
 
 @interface LoginPageViewController : UIViewController <LoginModelDelegate>
 

@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-#import "LoginPageViewController.h"
+#import "NavigationProtocol.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+#import "LoginPageViewController.h"
+#import "HomePageViewController.h"
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate, NavigationProtocol>
 
 @property (strong, nonatomic) UIWindow *window;
 

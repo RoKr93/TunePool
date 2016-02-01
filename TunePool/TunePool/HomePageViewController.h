@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#import <Spotify/Spotify.h>
+#import "User.h"
+
+
 @interface HomePageViewController : UIViewController
+
+- (id)initWithUser:(User *)user andSpotifySession:(SPTSession *)session;
 
 @end

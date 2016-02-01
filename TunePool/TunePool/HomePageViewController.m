@@ -10,9 +10,23 @@
 
 @interface HomePageViewController ()
 
+@property (nonatomic) User *user;
+@property (nonatomic) SPTSession *session;
+
 @end
 
 @implementation HomePageViewController
+
+- (id)initWithUser:(User *)user andSpotifySession:(SPTSession *)session
+{
+    self = [super init];
+    if (self)
+    {
+        self.user = user;
+        self.session = session;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
