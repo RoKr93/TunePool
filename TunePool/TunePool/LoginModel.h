@@ -8,7 +8,6 @@
 
 #import <Spotify/Spotify.h>
 #import <Foundation/Foundation.h>
-
 #import "User.h"
 
 @protocol LoginModelDelegate <NSObject>
@@ -31,6 +30,6 @@
              openURL:(NSURL *)url
    sourceApplication:(NSString *)sourceApplication
           annotation:(id)annotation;
-- (NSDictionary *) getUserInformation;
+- (User *) getUserInformation;
 
 @end

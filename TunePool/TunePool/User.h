@@ -6,10 +6,11 @@
 //  Copyright © 2016 Roshan Krishnan. All rights reserved.
 //
 
+#import <Spotify/Spotify.h>
 #import <Foundation/Foundation.h>
 
 @interface User : NSObject
 
-+ (User*)createUserWithResponse:(NSDictionary *)res;
++ (User*)createUserWithSPTUser:(SPTUser *)user;
 
 @end

@@ -72,8 +72,8 @@
         }];
         
         // we succeeded, aw yuhhh
-        if([(NSObject *)self.delegate respondsToSelector:@selector(loginModelSuccess)]){
-            [self.delegate loginModelSuccess];
+        if([(NSObject *)self.delegate respondsToSelector:@selector(loginModelSuccessWithUser:andSpotifySession:)]){
+            [self.delegate loginModelSuccessWithUser:[self getUserInformation] andSpotifySession:self.session];
         }
         return YES;
     }
@@ -85,9 +85,24 @@
     return NO;
 }
 
-- (NSDictionary *) getUserInformation {
-    NSDictionary *userInfo = [[NSDictionary alloc] init];
-    return userInfo;
+- (User *) getUserInformation {
+    __block User *myUser = nil;
+    
+    [SPTUser requestCurrentUserWithAccessToken:self.session.accessToken callback:^(NSError *error, SPTUser *user){
+        // check for error
+        if (error != nil) {
+            NSLog(@"*** Auth error: %@", error);
+            // notify the viewcontroller that we failed
+            if([(NSObject *)self.delegate respondsToSelector:@selector(loginModelFailure)]){
+                [self.delegate loginModelFailure];
+            }
+            return;
+        }
+        myUser = [User createUserWithSPTUser:user];
+    
+    }];
+    
+    return myUser;
 }
 
 @end

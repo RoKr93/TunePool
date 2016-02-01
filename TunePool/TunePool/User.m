@@ -31,11 +31,14 @@
     return self;
 }
 
-+ (User*)createUserWithResponse:(NSDictionary *)res
++ (User*)createUserWithSPTUser:(SPTUser *)user
 {
     User *newUser = [[User alloc] init];
     
-    //Extract the contents from the JSON Response
+    newUser.username = user.displayName;
+    NSString *uri = [user.uri absoluteString];
+    // uri will always be spotify:user:id
+    newUser.userID = [uri componentsSeparatedByString:@":"][2];
     
     return newUser;
 }
