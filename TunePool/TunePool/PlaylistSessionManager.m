@@ -72,6 +72,17 @@
     return false;
 }
 
+- (void)findLocalPlaylistsForLocation:(CLLocation *)location
+{
+    //Also a database call....
+    
+}
+
+- (void)joinLocalPlaylist:(PlaylistSession *)playlistSession
+{
+    //Yet another database call....
+}
+
 #pragma mark - Location Manager Protocol Methods
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
