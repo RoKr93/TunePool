@@ -66,10 +66,10 @@
     return false;
 }
 
-- (void)createNewPlaylistSessionWithUser:(User *)user Name:(NSString *)name andLocation:(CLLocation *)location
+- (BOOL)getAvailableSessions
 {
-    //This is going to be a database call....
-    
+    // TODO: grab available playlist sessions from web server
+    return false;
 }
 
 - (void)findLocalPlaylistsForLocation:(CLLocation *)location
