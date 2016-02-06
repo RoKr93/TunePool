@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		202DD5221C659B9F00B6CD46 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 202DD5211C659B9F00B6CD46 /* CoreLocation.framework */; };
+		202DD5251C659DE300B6CD46 /* PlaylistSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 202DD5241C659DE300B6CD46 /* PlaylistSessionManager.m */; };
 		2089B5CD1C5EC689003B18B8 /* LoginPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2089B5CB1C5EC689003B18B8 /* LoginPageViewController.m */; };
 		2089B5CE1C5EC689003B18B8 /* LoginPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2089B5CC1C5EC689003B18B8 /* LoginPageViewController.xib */; };
 		2089B5D21C5EC696003B18B8 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2089B5D01C5EC696003B18B8 /* HomePageViewController.m */; };
@@ -33,6 +35,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		202DD5211C659B9F00B6CD46 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		202DD5231C659DE300B6CD46 /* PlaylistSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistSessionManager.h; sourceTree = "<group>"; };
+		202DD5241C659DE300B6CD46 /* PlaylistSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistSessionManager.m; sourceTree = "<group>"; };
 		2089B5CA1C5EC689003B18B8 /* LoginPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginPageViewController.h; sourceTree = "<group>"; };
 		2089B5CB1C5EC689003B18B8 /* LoginPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginPageViewController.m; sourceTree = "<group>"; };
 		2089B5CC1C5EC689003B18B8 /* LoginPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginPageViewController.xib; sourceTree = "<group>"; };
@@ -80,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				202DD5221C659B9F00B6CD46 /* CoreLocation.framework in Frameworks */,
 				3FB297C01C5EC968009821EA /* SystemConfiguration.framework in Frameworks */,
 				3FB297BE1C5EC95A009821EA /* AVFoundation.framework in Frameworks */,
 				3FB297BC1C5EC8A6009821EA /* Spotify.framework in Frameworks */,
@@ -107,6 +113,8 @@
 				2089B5CF1C5EC696003B18B8 /* HomePageViewController.h */,
 				2089B5D01C5EC696003B18B8 /* HomePageViewController.m */,
 				2089B5D11C5EC696003B18B8 /* HomePageViewController.xib */,
+				202DD5231C659DE300B6CD46 /* PlaylistSessionManager.h */,
+				202DD5241C659DE300B6CD46 /* PlaylistSessionManager.m */,
 			);
 			name = HomePage;
 			sourceTree = "<group>";
@@ -224,6 +232,7 @@
 		3FB297BA1C5EC86C009821EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				202DD5211C659B9F00B6CD46 /* CoreLocation.framework */,
 				3FB297BF1C5EC968009821EA /* SystemConfiguration.framework */,
 				3FB297BD1C5EC95A009821EA /* AVFoundation.framework */,
 				3FB297BB1C5EC8A6009821EA /* Spotify.framework */,
@@ -307,6 +316,7 @@
 				2089B5DC1C5EC6C4003B18B8 /* PlaylistViewPageViewController.m in Sources */,
 				2089B5F61C5EC748003B18B8 /* MusicalTaste.m in Sources */,
 				2089B5F01C5EC72F003B18B8 /* SongPool.m in Sources */,
+				202DD5251C659DE300B6CD46 /* PlaylistSessionManager.m in Sources */,
 				2089B5E91C5EC708003B18B8 /* PlaylistSession.m in Sources */,
 				2089B5E01C5EC6E7003B18B8 /* User.m in Sources */,
 				2089B5D21C5EC696003B18B8 /* HomePageViewController.m in Sources */,

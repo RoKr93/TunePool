@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+#import "User.h"
+
 @interface PlaylistSession : NSObject
+
++ (PlaylistSession *)createPlaylistSessionWithOwner:(User *)owner name:(NSString *)name;
 
 @end
