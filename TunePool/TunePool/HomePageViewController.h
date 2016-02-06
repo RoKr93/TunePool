@@ -10,10 +10,15 @@
 
 #import <Spotify/Spotify.h>
 #import "User.h"
+#import "PlaylistSessionManager.h"
 
 
-@interface HomePageViewController : UIViewController
+@interface HomePageViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (strong, nonatomic) IBOutlet UITableView *availableSessions;
+@property (strong, nonatomic) IBOutlet UIButton *createSessionButton;
 
 - (id)initWithUser:(User *)user andSpotifySession:(SPTSession *)session;
+- (IBAction)createSessionButtonPressed:(id)sender;
 
 @end

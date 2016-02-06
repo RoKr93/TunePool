@@ -42,10 +42,6 @@
 		<string>location-services</string>
 		<string>armv7</string>
 	</array>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>spotify-action</string>
-	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

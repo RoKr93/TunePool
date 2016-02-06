@@ -11,6 +11,8 @@
 @interface PlaylistSessionManager ()
 
 @property (nonatomic) CLLocationManager *locationManager;
+@property (nonatomic) User *user;
+@property (nonatomic) SPTSession *session;
 
 - (void)setupCL;
 
@@ -18,11 +20,13 @@
 
 @implementation PlaylistSessionManager
 
-- (id)init
+- (id)initWithUser:(User *)user andSpotifySession:(SPTSession *)session
 {
     self = [super init];
     if (self)
     {
+        self.user = user;
+        self.session = session;
         [self setupCL];
     }
     return self;
@@ -90,6 +94,7 @@
     if (fabs(howRecent) < 15)
     {
         // If the event is recent, do something with it
+        // TODO: push info to web server
         NSLog(@"latitude %+.6f, longitude %+.6f\n", location.coordinate.latitude, location.coordinate.longitude);
     }
 }
