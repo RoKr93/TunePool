@@ -62,6 +62,23 @@
     return false;
 }
 
+- (void)createNewPlaylistSessionWithUser:(User *)user Name:(NSString *)name andLocation:(CLLocation *)location
+{
+    //This is going to be a database call....
+    
+}
+
+- (void)findLocalPlaylistsForLocation:(CLLocation *)location
+{
+    //Also a database call....
+    
+}
+
+- (void)joinLocalPlaylist:(PlaylistSession *)playlistSession
+{
+    //Yet another database call....
+}
+
 #pragma mark - Location Manager Protocol Methods
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
