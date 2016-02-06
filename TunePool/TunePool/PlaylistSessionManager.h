@@ -7,14 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <Spotify/Spotify.h>
 #import <CoreLocation/CoreLocation.h>
+#import "User.h"
 
 @interface PlaylistSessionManager : NSObject <CLLocationManagerDelegate>
 
-- (id)init;
+@property (nonatomic) NSMutableArray *availablePlaylistSessions;
 
+- (id)initWithUser:(User *)user andSpotifySession:(SPTSession *)session;
 - (BOOL)startLocationTracking;
 - (BOOL)stopLocationTracking;
+- (BOOL)getAvailableSessions;
 
 @end

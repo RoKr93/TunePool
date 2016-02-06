@@ -12,6 +12,7 @@
 
 @property (nonatomic) User *user;
 @property (nonatomic) SPTSession *session;
+@property (nonatomic) PlaylistSessionManager *playlistSessionManager;
 
 @end
 
@@ -24,6 +25,8 @@
     {
         self.user = user;
         self.session = session;
+        self.playlistSessionManager = [[PlaylistSessionManager alloc] initWithUser:self.user andSpotifySession:self.session];
+        [self.playlistSessionManager getAvailableSessions];
     }
     return self;
 }
@@ -37,6 +40,32 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)createSessionButtonPressed:(id)sender {
+    // TODO: create a new playlist session- we probably want to go to a new view for this
+}
+
+#pragma mark - Delegate methods
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.playlistSessionManager.availablePlaylistSessions count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *simpleTableIdentifier = @"SimpleTableItem";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    
+    cell.textLabel.text = [self.playlistSessionManager.availablePlaylistSessions objectAtIndex:indexPath.row];
+    return cell;
+}
+
 
 /*
 #pragma mark - Navigation
