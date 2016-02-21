@@ -11,7 +11,7 @@
 @interface AppDelegate ()
 
 @property (strong, nonatomic) LoginPageViewController *loginPageVC;
-@property (strong, nonatomic) UIViewController *homePageVC;
+@property (strong, nonatomic) HomePageViewController *homePageVC;
 
 @property (strong, nonatomic) User *user;
 @property (strong, nonatomic) SPTSession *spotifySession;
@@ -35,7 +35,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    self.loginPageVC = [[LoginPageViewController alloc] init];
+    self.loginPageVC = [[LoginPageViewController alloc] initWithAppDelegate:self];
     [self.window setRootViewController:self.loginPageVC];
     
     [self.window makeKeyAndVisible];
@@ -79,6 +79,7 @@
     
     self.homePageVC = [[HomePageViewController alloc] initWithUser:self.user andSpotifySession:self.spotifySession];
     [self.window setRootViewController:self.homePageVC];
+//    [self.window makeKeyAndVisible];
 }
 
 @end

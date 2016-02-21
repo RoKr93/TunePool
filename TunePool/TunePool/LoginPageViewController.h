@@ -13,6 +13,8 @@
 
 @interface LoginPageViewController : UIViewController <LoginModelDelegate>
 
+- (id)initWithAppDelegate:(id)appDelegate;
+
 - (BOOL) application:(UIApplication *)application
              openURL:(NSURL *)url
    sourceApplication:(NSString *)sourceApplication
