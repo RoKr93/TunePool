@@ -51,7 +51,7 @@
     return YES;
 }
 
-- (BOOL) application:(UIApplication *)application
+- (void) application:(UIApplication *)application
              openURL:(NSURL *)url
    sourceApplication:(NSString *)sourceApplication
           annotation:(id)annotation {
@@ -75,22 +75,23 @@
             
             // store the session in our property
             self.session = session;
+            
+            // check if we have a session
+            if(self.session != nil){
+                // we succeeded, aw yuhhh
+                if([(NSObject *)self.delegate respondsToSelector:@selector(loginModelSuccessWithUser:andSpotifySession:)])
+                {
+                    [self.delegate loginModelSuccessWithUser:[self getUserInformation] andSpotifySession:self.session];
+                }
+            }else{
+                // can't handle the URL, so we failed
+                if([(NSObject *)self.delegate respondsToSelector:@selector(loginModelFailure)])
+                {
+                    [self.delegate loginModelFailure];
+                }
+            }
         }];
-        
-        // we succeeded, aw yuhhh
-        if([(NSObject *)self.delegate respondsToSelector:@selector(loginModelSuccessWithUser:andSpotifySession:)])
-        {
-            [self.delegate loginModelSuccessWithUser:[self getUserInformation] andSpotifySession:self.session];
-        }
-        return YES;
     }
-    
-    // can't handle the URL, so we failed
-    if([(NSObject *)self.delegate respondsToSelector:@selector(loginModelFailure)])
-    {
-        [self.delegate loginModelFailure];
-    }
-    return NO;
 }
 
 - (User *) getUserInformation

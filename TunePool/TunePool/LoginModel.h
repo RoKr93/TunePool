@@ -26,7 +26,7 @@
 - (void)setDelegate:(id <LoginModelDelegate>)delegate;
 
 - (BOOL) doLogin;
-- (BOOL) application:(UIApplication *)application
+- (void) application:(UIApplication *)application
              openURL:(NSURL *)url
    sourceApplication:(NSString *)sourceApplication
           annotation:(id)annotation;
