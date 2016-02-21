@@ -21,6 +21,16 @@
 
 @implementation LoginPageViewController
 
+- (id)initWithAppDelegate:(id)appDelegate
+{
+    self = [super init];
+    if (self)
+    {
+        self.appDelegate = appDelegate;
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

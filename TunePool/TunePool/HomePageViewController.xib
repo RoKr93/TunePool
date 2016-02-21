@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -9,7 +9,6 @@
             <connections>
                 <outlet property="availableSessions" destination="928-6o-HOb" id="Wb8-3S-lAe"/>
                 <outlet property="createSessionButton" destination="oVe-1u-zs3" id="FAL-Hz-ROR"/>
-                <outlet property="newSessionButton" destination="oVe-1u-zs3" id="F9Y-Tw-3dm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,7 +23,6 @@
                     <state key="normal" title="Create Session"/>
                     <connections>
                         <action selector="createSessionButtonPressed:" destination="-1" eventType="touchUpInside" id="Bgu-CJ-uMV"/>
-                        <action selector="newSessionButtonPressed:" destination="-1" eventType="touchUpInside" id="W1t-Sc-mfl"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Available Sessions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfq-zM-a1O">
