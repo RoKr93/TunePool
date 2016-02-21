@@ -405,6 +405,7 @@
 				TargetAttributes = {
 					3FB2979F1C5EC328009821EA = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = HBJW962L7K;
 					};
 				};
 			};
@@ -572,6 +573,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TunePool",
@@ -588,6 +590,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TunePool",
