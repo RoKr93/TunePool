@@ -51,6 +51,15 @@
         [self presentViewController:self.failAlert animated:true completion:nil];
 }
 
+- (BOOL) application:(UIApplication *)application
+             openURL:(NSURL *)url
+   sourceApplication:(NSString *)sourceApplication
+          annotation:(id)annotation {
+    [self.loginModel application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
+    return YES;
+}
+
+
 #pragma mark - LoginModel Delegate Methods
 
 - (void)loginModelSuccessWithUser:(User *)user andSpotifySession:(SPTSession *)session

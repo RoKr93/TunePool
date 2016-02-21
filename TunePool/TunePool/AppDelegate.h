@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Spotify/Spotify.h>
 
 #import "NavigationProtocol.h"
-
 #import "LoginPageViewController.h"
 #import "HomePageViewController.h"
 

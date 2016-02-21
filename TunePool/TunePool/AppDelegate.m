@@ -10,7 +10,7 @@
 
 @interface AppDelegate ()
 
-@property (strong, nonatomic) UIViewController *loginPageVC;
+@property (strong, nonatomic) LoginPageViewController *loginPageVC;
 @property (strong, nonatomic) UIViewController *homePageVC;
 
 @property (strong, nonatomic) User *user;
@@ -39,6 +39,13 @@
     [self.window setRootViewController:self.loginPageVC];
     
     [self.window makeKeyAndVisible];
+}
+
+-(BOOL)application:(UIApplication *)application
+           openURL:(NSURL *)url
+ sourceApplication:(NSString *)sourceApplication
+        annotation:(id)annotation {
+    return [self.loginPageVC application:application openURL:url sourceApplication:sourceApplication annotation:annotation];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
