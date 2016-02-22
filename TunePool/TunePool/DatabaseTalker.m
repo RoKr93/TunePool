@@ -71,7 +71,7 @@ typedef void (^FailureCallbackBlock)(NSURLSessionDataTask *task, NSError *error)
         //Apache is set up to listen on port 5400
         
         //SmartBar Server
-        self.serverName = @"http://68.194.28.251:5400";
+        self.serverName = @"http://fore.miami.edu:6969";
         
         //If running locally
         //self.serverName = @"localhost";
@@ -82,7 +82,7 @@ typedef void (^FailureCallbackBlock)(NSURLSessionDataTask *task, NSError *error)
         }
         
         //Path for the php script
-        self.pathName = @"ButtStuff.php";
+        self.pathName = @"";
         if (path)
         {
             self.pathName = path;
@@ -100,6 +100,8 @@ typedef void (^FailureCallbackBlock)(NSURLSessionDataTask *task, NSError *error)
     
     return self;
 }
+
+# pragma mark - Success/Failure Completion Block Creators
 
 + (SuccessCallbackBlock)successForCompletionBlock:(CompletionBlock)completionBlock
 {
@@ -151,14 +153,20 @@ typedef void (^FailureCallbackBlock)(NSURLSessionDataTask *task, NSError *error)
     return failure;
 }
 
-//- (void)doHttpRequestWithUrl:(NSString *)urlString andCompletionBlock:(HttpResponse)completionBlock
-//{
-//    // create the request
-//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
-//    
-//    // send our request away
-//    [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:completionBlock];
-//}
+# pragma mark - General Users Functions
+
+- (void)loginAsUser:(User *)user andCompletionBlock:(CompletionBlock)completionBlock
+{
+    NSDictionary *params = [[NSDictionary alloc] init];
+    
+    [params setValue:@"createUser" forKey:@"operation"];
+    [params setValue:[User serializeObjectToDictionary:user] forKey:@"user"];
+    
+    SuccessCallbackBlock success = [DatabaseTalker successForCompletionBlock:completionBlock];
+    FailureCallbackBlock failure = [DatabaseTalker failureForCompletionBlock:completionBlock];
+    
+    [self performAsyncServerCallWithParams:params andSuccess:success andFailure:failure];
+}
 
 # pragma mark - Creating/Finding/Joining Playlist Sessions
 
@@ -167,7 +175,7 @@ typedef void (^FailureCallbackBlock)(NSURLSessionDataTask *task, NSError *error)
     NSDictionary *params = [[NSDictionary alloc] init];
     
     [params setValue:@"createPlaylistSession" forKey:@"operation"];
-    [params setValue:user forKey:@"user"];
+    [params setValue:[User serializeObjectToDictionary:user] forKey:@"user"];
     [params setValue:name forKey:@"name"];
     [params setValue:location forKey:@"location"];
     

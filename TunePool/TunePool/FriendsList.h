@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FriendsList : NSObject
+@interface FriendsList : NSObject <SerializeProtocol>
 
 @end
