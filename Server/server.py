@@ -8,8 +8,9 @@ class ReqHandler(BaseHTTPRequestHandler):
         # Parse the request URL.
         parsedObject = urlparse.urlparse(self.path)
         
-        # The path will always start with /student-web/ (which is 12 chars)
-        reqType = parsedObject.path[12:]
+        # The path will always start with /, so cut that off
+        reqType = parsedObject.path[1:]
+        print reqType
         
         # Bool for determining whether we should respond to client with success
         responseCode = 0
@@ -27,6 +28,6 @@ class ReqHandler(BaseHTTPRequestHandler):
         
 if __name__ == '__main__':
     from BaseHTTPServer import HTTPServer
-    server = HTTPServer(('localhost', PORT), ReqHandler)
+    server = HTTPServer(('0.0.0.0', PORT), ReqHandler)
     print 'Listening on port', PORT
     server.serve_forever()
