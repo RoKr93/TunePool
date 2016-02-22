@@ -10,6 +10,7 @@
 
 #import "LoginModel.h"
 #import "NavigationProtocol.h"
+#import "DatabaseTalker.h"
 
 @interface LoginPageViewController : UIViewController <LoginModelDelegate>
 

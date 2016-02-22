@@ -9,8 +9,12 @@
 #import <Spotify/Spotify.h>
 #import <Foundation/Foundation.h>
 
-@interface User : NSObject
+#import "SerializeProtocol.h"
+
+@interface User : NSObject <SerializeProtocol>
 
 + (User*)createUserWithSPTUser:(SPTUser *)user;
+
++ (NSDictionary *)serializeObjectToDictionary:(id)pObj;
 
 @end

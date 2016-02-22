@@ -24,6 +24,10 @@ typedef void (^CompletionBlock)(id response);
 
 - (void)testConnectionWithCompletion;
 
+#pragma mark - General User Functions
+
+- (void)loginAsUser:(User *)user andCompletionBlock:(CompletionBlock)completionBlock;
+
 # pragma mark - Creating/Finding/Joining Playlist Sessions
 
 - (void)createPlaylistSessionWithUser:(User *)user Name:(NSString *)name Location:(CLLocation *)location andCompletionBlock:(CompletionBlock)completionBlock;

@@ -9,6 +9,7 @@
 #import <Spotify/Spotify.h>
 #import <Foundation/Foundation.h>
 #import "User.h"
+#import "DatabaseTalker.h"
 
 @protocol LoginModelDelegate <NSObject>
 @required
@@ -21,9 +22,10 @@
 @interface LoginModel : NSObject
 
 @property (nonatomic, strong) SPTSession *session;
+@property (nonatomic, strong) User *user;
 @property (nonatomic, strong) NSMutableArray *scopes;
 
-- (void)setDelegate:(id <LoginModelDelegate>)delegate;
+//- (void)setDelegate:(id <LoginModelDelegate>)delegate;
 
 - (BOOL) doLogin;
 - (void) application:(UIApplication *)application

@@ -43,4 +43,22 @@
     return newUser;
 }
 
++ (NSDictionary *)serializeObjectToDictionary:(id)pObj
+{
+    User *obj = pObj;
+    
+    if (obj == nil)
+    {
+        return nil;
+    }
+    
+    NSDictionary *dict = [[NSDictionary alloc] init];
+    [dict setValue:obj.username forKey:@"username"];
+    [dict setValue:obj.userID forKey:@"userID"];
+    [dict setValue:[FriendsList serializeObjectToDictionary:obj.friends] forKey:@"friendsList"];
+    [dict setValue:[MusicalTaste serializeObjectToDictionary:obj.taste] forKey:@"musicalTaste"];
+    
+    return dict;
+}
+
 @end

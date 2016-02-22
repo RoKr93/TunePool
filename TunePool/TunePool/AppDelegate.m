@@ -79,7 +79,6 @@
     
     self.homePageVC = [[HomePageViewController alloc] initWithUser:self.user andSpotifySession:self.spotifySession andAppDelegate:self];
     [self.window setRootViewController:self.homePageVC];
-//    [self.window makeKeyAndVisible];
 }
 
 @end
