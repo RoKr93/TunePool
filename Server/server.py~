@@ -1,0 +1,17 @@
+from BaseHTTPServer import BaseHTTPRequestHandler
+import urlparse
+
+PORT = 6969
+
+class ReqHandler(BaseHTTPRequestHandler):
+    def do_POST(self):
+        print "Got post!"
+        # Parse query data / params to find out what was passed
+        parsed = urlparse.urlparse(self.path)
+        print parsed
+        
+if __name__ == '__main__':
+    from BaseHTTPServer import HTTPServer
+    server = HTTPServer(('localhost', PORT), ReqHandler)
+    print 'Listening on port', PORT
+    server.serve_forever()

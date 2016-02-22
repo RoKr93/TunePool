@@ -18,7 +18,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *availableSessions;
 @property (strong, nonatomic) IBOutlet UIButton *createSessionButton;
 
-- (id)initWithUser:(User *)user andSpotifySession:(SPTSession *)session;
+- (id)initWithUser:(User *)user andSpotifySession:(SPTSession *)session andAppDelegate:(id)appDelegate;
 - (IBAction)createSessionButtonPressed:(id)sender;
 
 @end

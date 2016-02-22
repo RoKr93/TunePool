@@ -13,18 +13,20 @@
 @property (nonatomic) User *user;
 @property (nonatomic) SPTSession *session;
 @property (nonatomic) PlaylistSessionManager *playlistSessionManager;
+@property (nonatomic) id appDelegate;
 
 @end
 
 @implementation HomePageViewController
 
-- (id)initWithUser:(User *)user andSpotifySession:(SPTSession *)session
+- (id)initWithUser:(User *)user andSpotifySession:(SPTSession *)session andAppDelegate:(id)appDelegate
 {
     self = [super init];
     if (self)
     {
         self.user = user;
         self.session = session;
+        self.appDelegate = appDelegate;
         self.playlistSessionManager = [[PlaylistSessionManager alloc] initWithUser:self.user andSpotifySession:self.session];
         [self.playlistSessionManager getAvailableSessions];
     }
