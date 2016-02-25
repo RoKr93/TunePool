@@ -28,23 +28,58 @@
         self.session = session;
         self.appDelegate = appDelegate;
         self.playlistSessionManager = [[PlaylistSessionManager alloc] initWithUser:self.user andSpotifySession:self.session];
-        [self.playlistSessionManager getAvailableSessions];
     }
     return self;
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.playlistSessionManager startLocationTracking];
+    [self.playlistSessionManager getAvailableSessions];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    [self.playlistSessionManager stopLocationTracking];
+}
+
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)createSessionButtonPressed:(id)sender {
+- (IBAction)createSessionButtonPressed:(id)sender
+{
     // TODO: create a new playlist session- we probably want to go to a new view for this
+    UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"Create New Playlist" message:@"Enter the information for this Playlist" preferredStyle:UIAlertControllerStyleAlert];
+    
+    [ac addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField)
+    {
+        textField.placeholder = @"Playlist Name";
+    }];
+    
+    UIAlertAction *create = [UIAlertAction actionWithTitle:@"Create Playlist" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
+    {
+        //Database Talker
+        NSLog(@"Creating a Playlist with name - %@", [ac textFields][0].text);
+    }];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    
+    [ac addAction:create];
+    [ac addAction:cancel];
+    
+    [self presentViewController:ac animated:true completion:nil];
 }
 
 #pragma mark - Delegate methods
