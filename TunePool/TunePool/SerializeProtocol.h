@@ -13,7 +13,8 @@
 
 @protocol SerializeProtocol <NSObject>
 
-@required
+//@required
+@optional
 + (NSDictionary *)serializeObjectToDictionary:(id)pObj;
 
 @end

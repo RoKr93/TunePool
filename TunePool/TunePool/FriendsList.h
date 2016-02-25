@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SerializeProtocol.h"
 
 @interface FriendsList : NSObject <SerializeProtocol>
 

@@ -25,7 +25,7 @@
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) NSMutableArray *scopes;
 
-//- (void)setDelegate:(id <LoginModelDelegate>)delegate;
+- (void)setDelegate:(id <LoginModelDelegate>)delegate;
 
 - (BOOL) doLogin;
 - (void) application:(UIApplication *)application

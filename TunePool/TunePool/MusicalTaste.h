@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SerializeProtocol.h"
 
 @interface MusicalTaste : NSObject <SerializeProtocol>
 

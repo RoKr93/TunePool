@@ -71,7 +71,7 @@ typedef void (^FailureCallbackBlock)(NSURLSessionDataTask *task, NSError *error)
         //Apache is set up to listen on port 5400
         
         //SmartBar Server
-        self.serverName = @"http://fore.miami.edu:6969";
+        self.serverName = @"http://fore.miami.edu/student-web";
         
         //If running locally
         //self.serverName = @"localhost";
@@ -82,7 +82,7 @@ typedef void (^FailureCallbackBlock)(NSURLSessionDataTask *task, NSError *error)
         }
         
         //Path for the php script
-        self.pathName = @"";
+        self.pathName = @"CoolAssAPI.php";
         if (path)
         {
             self.pathName = path;
@@ -157,7 +157,7 @@ typedef void (^FailureCallbackBlock)(NSURLSessionDataTask *task, NSError *error)
 
 - (void)loginAsUser:(User *)user andCompletionBlock:(CompletionBlock)completionBlock
 {
-    NSDictionary *params = [[NSDictionary alloc] init];
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     
     [params setValue:@"createUser" forKey:@"operation"];
     [params setValue:[User serializeObjectToDictionary:user] forKey:@"user"];
@@ -189,7 +189,7 @@ typedef void (^FailureCallbackBlock)(NSURLSessionDataTask *task, NSError *error)
 
 -(void)performAsyncServerCallWithParams:(NSDictionary*)params andSuccess:(SuccessCallbackBlock)success andFailure:(FailureCallbackBlock)failure
 {
-    [self.connectionManager POST:self.pathName parameters:params success:success failure:failure];
+    [self.connectionManager POST:self.pathName parameters:params constructingBodyWithBlock:nil progress:nil success:success failure:failure];
 }
 
 @end
