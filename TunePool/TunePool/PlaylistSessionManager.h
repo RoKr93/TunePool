@@ -17,6 +17,7 @@
 @property (nonatomic) NSMutableArray *availablePlaylistSessions;
 
 - (id)initWithUser:(User *)user andSpotifySession:(SPTSession *)session;
+
 - (BOOL)startLocationTracking;
 - (BOOL)stopLocationTracking;
 - (BOOL)getAvailableSessions;

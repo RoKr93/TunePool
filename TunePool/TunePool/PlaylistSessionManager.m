@@ -48,7 +48,13 @@
 {
     if ([CLLocationManager locationServicesEnabled])
     {
-        [self.locationManager startUpdatingLocation];
+//        [self.locationManager startUpdatingLocation];
+        
+        if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined)
+        {
+            [self.locationManager requestWhenInUseAuthorization];
+        }
+        
         return true;
     }
     
@@ -69,6 +75,10 @@
 - (BOOL)getAvailableSessions
 {
     // TODO: grab available playlist sessions from web server
+    
+    CLLocation *location = [self.locationManager location];
+    NSLog(@"WOW! latitude %+.6f, longitude %+.6f\n", location.coordinate.latitude, location.coordinate.longitude);
+    
     return false;
 }
 
@@ -85,6 +95,14 @@
 
 #pragma mark - Location Manager Protocol Methods
 
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    if (status == kCLAuthorizationStatusAuthorizedAlways || status == kCLAuthorizationStatusAuthorizedWhenInUse)
+    {
+        [manager startUpdatingLocation];
+    }
+}
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
 {
     CLLocation *location = [locations lastObject];
@@ -93,15 +111,13 @@
     
     if (fabs(howRecent) < 15)
     {
-        // If the event is recent, do something with it
-        // TODO: push info to web server
         NSLog(@"latitude %+.6f, longitude %+.6f\n", location.coordinate.latitude, location.coordinate.longitude);
     }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-    
+    NSLog(@"OH SHIT BRUHH, CoreLocationManage says: %@", [error localizedDescription]);
 }
 
 @end
