@@ -82,7 +82,7 @@ typedef void (^FailureCallbackBlock)(NSURLSessionDataTask *task, NSError *error)
         }
         
         //Path for the php script
-        self.pathName = @"CoolAssAPI.php";
+        self.pathName = @"BaseAPI.php";
         if (path)
         {
             self.pathName = path;

@@ -2,6 +2,7 @@
 	// ini_set('memory_limit', '-1');
 	
 	//require 'PHPMailer/PHPMailerAutoload.php';
+	require 'CreateUser.php';
 
 	// Helper method to get a string description for an HTTP status code
     // From http://www.gen-x-design.com/archives/create-a-rest-api-with-php/
@@ -79,7 +80,10 @@
 			//$this->db = new PDO("pgsql:dbname=meatfest_dev;host=localhost",'evanshenkman','rileyrose');
 			// $this->db = new PDO("pgsql:dbname=smartbar_dev;host=localhost",'postgres','628114');
             //var_dump($this->db);
-			$this->db = new PDO("pgsql:dbname=student_projects; host=localhost, 'student', I1sAStudent");
+			$this->db = new PDO("pgsql:dbname=student_projects; host=localhost", 'student', 'I1sAStudent!');
+
+			// throw exceptions if any queries fail
+			$this->$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
         
         // Destructor - close DB connection
@@ -118,16 +122,37 @@
 				{
 					return $this->testConnection();
 				}
+
+				switch($op){
+					case "createUser":
+						// do some stuff
+						if(createUser(	$db,
+										$_POST["username"],
+										$_POST["userID"],
+										$_POST["friendsList"],
+										$_POST["musicalTaste"])){
+							$result = array("response" => 'User created!');
+							sendResponse(200, json_encode($result));
+							return true;
+						}else{
+							$result = array("response" => 'Server error: unable to create user');
+							sendResponse(500, json_encode($result));
+							return true;
+						}
+						break;
+					default:
+						break;
+				}
 				
 				$result = array("response" => 'Invalid request. Not a valid operation.');
-				sendResponse(200, json_encode($result));
+				sendResponse(400, json_encode($result));
 				return false;
 			}
 			
 			catch(Exception $e)
 			{
 				$error = array("response" => 'failure', "message" => 'Server exception: '.$e->getMessage());
-				sendResponse(200, json_encode($error));
+				sendResponse(500, json_encode($error));
 				return false;
 			}
 		}
