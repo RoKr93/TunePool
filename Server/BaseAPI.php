@@ -10,7 +10,7 @@
         // these could be stored in a .ini file and loaded
         // via parse_ini_file()... however, this will suffice
         // for an example
-        $codes = Array(
+        $codes = array(
                        100 => 'Continue',
                        101 => 'Switching Protocols',
                        200 => 'OK',
@@ -52,7 +52,7 @@
                        503 => 'Service Unavailable',
                        504 => 'Gateway Timeout',
                        505 => 'HTTP Version Not Supported'
-                       );
+		);
         
         return (isset($codes[$status])) ? $codes[$status] : '';
     }
@@ -76,10 +76,8 @@
         {
 			// $this->folder = "uploading/";
 			//Note: Keep the two lines below, and just uncomment the one you want to connect to
-			//$this->db = new PDO("pgsql:dbname=meatfest_dev;host=localhost",'evanshenkman','rileyrose');
-			// $this->db = new PDO("pgsql:dbname=smartbar_dev;host=localhost",'postgres','628114');
             //var_dump($this->db);
-			$this->db = new PDO("pgsql:dbname=student_projects; host=localhost, 'student', I1sAStudent");
+			$this->db = new PDO("pgsql:dbname=student_projects; host=localhost", 'student', 'I1sAStudent!');
         }
         
         // Destructor - close DB connection
@@ -102,6 +100,10 @@
 		//Main method
 		function doWork()
 		{
+			$result = array("response" => 'success', "coolMessage" => 'You did it!');
+			sendResponse(200, json_encode($result));
+			return true;
+
 			try
 			{
 				if(!isset($_POST["operation"]))
