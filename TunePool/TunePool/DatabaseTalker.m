@@ -66,15 +66,8 @@ typedef void (^FailureCallbackBlock)(NSURLSessionDataTask *task, NSError *error)
     self = [super init];
     if (self)
     {
-        //In router config
-        //Use this computers IP Address to setup port forwarding
-        //Apache is set up to listen on port 5400
-        
         //SmartBar Server
         self.serverName = @"http://fore.miami.edu/student-web";
-        
-        //If running locally
-        //self.serverName = @"localhost";
         
         if (server)
         {
@@ -82,20 +75,25 @@ typedef void (^FailureCallbackBlock)(NSURLSessionDataTask *task, NSError *error)
         }
         
         //Path for the php script
-        self.pathName = @"CoolAssAPI.php";
+        self.pathName = @"BaseAPI.php";
         if (path)
         {
             self.pathName = path;
         }
         
-        self.userName = user;
-        self.password = pass;
+        self.userName = @"student-user";
+        self.password = @"q=Ec6VJWxw/~7AwL&^Cjw8*[2dE]]<CU";
         
         //This will be a general NSURL thing or watevs
         self.connectionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:self.serverName]];
-        self.connectionManager.requestSerializer = [AFHTTPRequestSerializer serializer];
+        
         self.connectionManager.responseSerializer = [AFJSONResponseSerializer serializer];
+        self.connectionManager.securityPolicy.allowInvalidCertificates = YES;
         [self.connectionManager.responseSerializer setAcceptableContentTypes:[NSSet setWithObject:@"text/html"]];
+        
+        self.connectionManager.requestSerializer = [AFHTTPRequestSerializer serializer];
+        [self.connectionManager.requestSerializer setAuthorizationHeaderFieldWithUsername:self.userName password:self.password];
+        
     }
     
     return self;
