@@ -6,8 +6,12 @@
  * Time: 12:10 AM
  */
 
-function createUser($db, $username)
+function createUser($db, $username, $id)
 {
-
+    $queryString = "INSERT INTO Users (:id, :username)";
+    $q = $db->prepare($queryString);
+    $q->execute(array(':id' => $id));
+    $result = $q->fetch();
+    return true;
 }
 ?>
