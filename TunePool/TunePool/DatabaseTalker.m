@@ -157,7 +157,7 @@ typedef void (^FailureCallbackBlock)(NSURLSessionDataTask *task, NSError *error)
 {
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     
-    [params setValue:@"createUser" forKey:@"operation"];
+    [params setValue:@"login" forKey:@"operation"];
     [params setValue:[User serializeObjectToDictionary:user] forKey:@"user"];
     
     SuccessCallbackBlock success = [DatabaseTalker successForCompletionBlock:completionBlock];
