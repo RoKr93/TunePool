@@ -101,10 +101,6 @@
 		//Main method
 		function doWork()
 		{
-			$result = array("response" => 'success', "coolMessage" => 'You did it!');
-			sendResponse(200, json_encode($result));
-			return true;
-
 			try
 			{
 				if(!isset($_POST["operation"]))
