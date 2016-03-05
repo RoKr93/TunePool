@@ -83,7 +83,7 @@
                 
                 [[DatabaseTalker getDatabaseTalker] loginAsUser:self.user andCompletionBlock:^(NSDictionary *response)
                 {
-                    if ([response objectForKey:@"success"])
+                    if ([response databaseSuccessful])
                     {
                         // we succeeded, aw yuhhh
                         if([(NSObject *)self.delegate respondsToSelector:@selector(loginModelSuccessWithUser:andSpotifySession:)])
