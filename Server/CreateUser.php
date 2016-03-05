@@ -8,7 +8,7 @@
 
 function createUser($db, $username, $id)
 {
-    $queryString = "INSERT INTO Users (:id, :username)";
+    $queryString = "INSERT INTO users (.$id., .$username.)";
     $q = $db->prepare($queryString);
     $q->execute(array(':id' => $id));
     $result = $q->fetch();

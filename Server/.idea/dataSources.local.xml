@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="PostgreSQL - student_projects@localhost" uuid="c89b8af2-9cf9-4aa6-a580-f9d5fc26bde0">
+      <secret-storage>master_key</secret-storage>
+      <user-name>student</user-name>
+      <ssh-properties>
+        <enabled>true</enabled>
+        <proxy-host>lucifer.ccs.miami.edu</proxy-host>
+        <proxy-port>22</proxy-port>
+        <secret-storage>master_key</secret-storage>
+        <user>reload</user>
+        <use-password>true</use-password>
+      </ssh-properties>
+    </data-source>
+  </component>
+</project>
