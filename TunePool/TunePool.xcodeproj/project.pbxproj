@@ -10,6 +10,7 @@
 		202DD5221C659B9F00B6CD46 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 202DD5211C659B9F00B6CD46 /* CoreLocation.framework */; };
 		202DD5251C659DE300B6CD46 /* PlaylistSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 202DD5241C659DE300B6CD46 /* PlaylistSessionManager.m */; };
 		202DD5291C667E6000B6CD46 /* DatabaseTalker.m in Sources */ = {isa = PBXBuildFile; fileRef = 202DD5281C667E6000B6CD46 /* DatabaseTalker.m */; };
+		205D2EA11C8A4C7D00329596 /* NSDictionary+DatabaseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 205D2EA01C8A4C7D00329596 /* NSDictionary+DatabaseResponse.m */; };
 		2089B5CD1C5EC689003B18B8 /* LoginPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2089B5CB1C5EC689003B18B8 /* LoginPageViewController.m */; };
 		2089B5CE1C5EC689003B18B8 /* LoginPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2089B5CC1C5EC689003B18B8 /* LoginPageViewController.xib */; };
 		2089B5D21C5EC696003B18B8 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2089B5D01C5EC696003B18B8 /* HomePageViewController.m */; };
@@ -57,6 +58,8 @@
 		202DD5241C659DE300B6CD46 /* PlaylistSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistSessionManager.m; sourceTree = "<group>"; };
 		202DD5271C667E6000B6CD46 /* DatabaseTalker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseTalker.h; sourceTree = "<group>"; };
 		202DD5281C667E6000B6CD46 /* DatabaseTalker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseTalker.m; sourceTree = "<group>"; };
+		205D2E9F1C8A4C7D00329596 /* NSDictionary+DatabaseResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+DatabaseResponse.h"; sourceTree = "<group>"; };
+		205D2EA01C8A4C7D00329596 /* NSDictionary+DatabaseResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+DatabaseResponse.m"; sourceTree = "<group>"; };
 		2089B5CA1C5EC689003B18B8 /* LoginPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginPageViewController.h; sourceTree = "<group>"; };
 		2089B5CB1C5EC689003B18B8 /* LoginPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginPageViewController.m; sourceTree = "<group>"; };
 		2089B5CC1C5EC689003B18B8 /* LoginPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginPageViewController.xib; sourceTree = "<group>"; };
@@ -225,6 +228,8 @@
 				2089B5F51C5EC748003B18B8 /* MusicalTaste.m */,
 				2089B5FB1C5F0805003B18B8 /* NavigationProtocol.h */,
 				20D8170B1C7A6E41008AA8EC /* SerializeProtocol.h */,
+				205D2E9F1C8A4C7D00329596 /* NSDictionary+DatabaseResponse.h */,
+				205D2EA01C8A4C7D00329596 /* NSDictionary+DatabaseResponse.m */,
 			);
 			name = Foundation;
 			sourceTree = "<group>";
@@ -438,6 +443,7 @@
 			files = (
 				2089B5E31C5EC6F2003B18B8 /* Song.m in Sources */,
 				202DD5291C667E6000B6CD46 /* DatabaseTalker.m in Sources */,
+				205D2EA11C8A4C7D00329596 /* NSDictionary+DatabaseResponse.m in Sources */,
 				3FBFE0C61C7EAEFD00FC33C1 /* UIButton+AFNetworking.m in Sources */,
 				2089B5DC1C5EC6C4003B18B8 /* PlaylistViewPageViewController.m in Sources */,
 				3FBFE0CA1C7EAEFD00FC33C1 /* UIWebView+AFNetworking.m in Sources */,
