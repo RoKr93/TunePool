@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSDictionary+DatabaseResponse.h"
 
 #import <UIKit/UIKit.h>
 #import "AFNetworking.h"
