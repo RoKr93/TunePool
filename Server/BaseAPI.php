@@ -2,7 +2,7 @@
 	// ini_set('memory_limit', '-1');
 	
 	//require 'PHPMailer/PHPMailerAutoload.php';
-	require 'CreateUser.php';
+	require 'Login.php';
 
 	// Helper method to get a string description for an HTTP status code
     // From http://www.gen-x-design.com/archives/create-a-rest-api-with-php/
@@ -124,13 +124,9 @@
 				}
 
 				switch($op){
-					case "createUser":
+					case "login":
 						// do some stuff
-						if(createUser(	$db,
-										$_POST["username"],
-										$_POST["userID"],
-										$_POST["friendsList"],
-										$_POST["musicalTaste"])){
+						if(login($db, $_POST['username'], $_POST['userID']) == 200){
 							$result = array("response" => 'User created!');
 							sendResponse(200, json_encode($result));
 							return true;

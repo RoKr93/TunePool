@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3276409204">
+    <data-source source="LOCAL" name="PostgreSQL - student_projects@localhost" uuid="c89b8af2-9cf9-4aa6-a580-f9d5fc26bde0">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/student_projects</jdbc-url>
+    </data-source>
+  </component>
+</project>
